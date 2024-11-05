@@ -1,6 +1,6 @@
 //
-//  whisper_keyboardApp.swift
-//  whisper-keyboard
+//  whisper_iosApp.swift
+//  whisper-ios
 //
 //  Created by Aman Kishore on 10/20/24.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct whisper_keyboardApp: App {
+struct whisper_iosApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @Environment(\.scenePhase) private var scenePhase
     

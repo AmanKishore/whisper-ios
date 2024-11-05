@@ -1,6 +1,6 @@
 //
 //  SharedAudioRecorder.swift
-//  whisper-keyboard
+//  whisper-ios
 //
 //  Created by Aman Kishore on 11/3/24.
 //
@@ -12,7 +12,7 @@ class SharedAudioRecorder: NSObject, AVAudioRecorderDelegate {
     static let shared = SharedAudioRecorder()
     private let audioSession = AVAudioSession.sharedInstance()
     private var audioRecorder: AVAudioRecorder?
-    private let sharedDefaults = UserDefaults(suiteName: "group.com.amanml.whisperkeyboard")
+    private let sharedDefaults = UserDefaults(suiteName: "group.com.amanml.whisper")
     
     var isRecording = false
     

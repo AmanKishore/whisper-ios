@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  whisper-keyboard
+//  whisper-ios
 //
 //  Created by Aman Kishore on 11/3/24.
 //

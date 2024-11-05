@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  whisper-keyboard
+//  whisper-ios
 //
 //  Created by Aman Kishore on 10/20/24.
 //
@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var transcriptionManager = TranscriptionManager()
     @State private var isRecording = false
-    private let sharedDefaults = UserDefaults(suiteName: "group.com.amanml.whisperkeyboard")
+    private let sharedDefaults = UserDefaults(suiteName: "group.com.amanml.whisper")
     
     var body: some View {
         VStack(spacing: 20) {
@@ -114,7 +114,6 @@ struct ContentView: View {
         ) { [self] notification in
             if let urlString = notification.object as? String,
                let url = URL(string: urlString) {
-                print("DEBUG: Starting recording from keyboard extension")
                 SharedAudioRecorder.shared.startRecording()
                 isRecording = true
                 
