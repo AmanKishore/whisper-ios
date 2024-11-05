@@ -1,1 +1,1 @@
-openai_whisper-tiny filter=lfs diff=lfs merge=lfs -text
+openai_whisper-tiny/* filter=lfs diff=lfs merge=lfs -text
