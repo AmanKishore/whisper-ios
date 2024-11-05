@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f56f0544cfcbf66a9c6864472804673a57fb3c68f1efd9ca552251ed1b8d3309
-size 851
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionAttributes</key>
+		<dict>
+			<key>IsASCIICapable</key>
+			<false/>
+			<key>PrefersRightToLeft</key>
+			<false/>
+			<key>PrimaryLanguage</key>
+			<string>en-US</string>
+			<key>RequestsOpenAccess</key>
+			<true/>
+		</dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.keyboard-service</string>
+		<key>NSExtensionPrincipalClass</key>
+		<string>$(PRODUCT_MODULE_NAME).KeyboardViewController</string>
+	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>processing</string>
+	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need access to the microphone for voice dictation.</string>
+</dict>
+</plist>

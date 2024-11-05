@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b5ad260f557ac4d4a27454d91517e1a2bb48ae2f3147cbf6414c86b59635fca1
-size 453
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildLocationStyle</key>
+	<string>UseAppPreferences</string>
+	<key>CustomBuildLocationType</key>
+	<string>RelativeToDerivedData</string>
+	<key>DerivedDataLocationStyle</key>
+	<string>Default</string>
+	<key>ShowSharedSchemesAutomaticallyEnabled</key>
+	<true/>
+</dict>
+</plist>

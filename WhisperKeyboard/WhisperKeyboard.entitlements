@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3ccb8300b84f9dcad3f8d7aa944da9dde6087a98018622f40a26166a90d48b9
-size 346
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.com.amanml.whisperkeyboard</string>
+	</array>
+	<key>inter-app-audio</key>
+	<true/>
+</dict>
+</plist>

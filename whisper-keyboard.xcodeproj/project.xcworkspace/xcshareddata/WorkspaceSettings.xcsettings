@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:00cdc472576be3c35e81cc8d2122d4da21af8c6a0ede7cae1e075f63aeb819f8
-size 263
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDEWorkspaceSharedSettings_AutocreateContextsIfNeeded</key>
+	<true/>
+</dict>
+</plist>
