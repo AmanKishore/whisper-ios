@@ -11,55 +11,93 @@ struct ContentView: View {
     @StateObject private var transcriptionManager = TranscriptionManager()
     @State private var isRecording = false
     private let sharedDefaults = UserDefaults(suiteName: "group.com.amanml.whisper")
+    @State private var showCopiedAlert = false
     
     var body: some View {
-        VStack(spacing: 20) {
-            Image(systemName: isRecording ? "waveform" : "mic")
-                .imageScale(.large)
-                .foregroundColor(isRecording ? .red : .blue)
-                .padding()
-            
-            Text(isRecording ? "Recording..." : "Tap to Record")
-                .font(.headline)
-            
-            Button(action: {
-                if isRecording {
-                    handleRecordingStop()
-                } else {
-                    SharedAudioRecorder.shared.startRecording()
-                    isRecording = true
-                }
-            }) {
-                Text(isRecording ? "Stop" : "Start")
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(isRecording ? Color.red : Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
-            .disabled(transcriptionManager.isLoading)
-            
-            if transcriptionManager.isLoading {
-                ProgressView("Processing...")
-            }
-            
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Transcription:")
-                    .font(.headline)
-                
-                ScrollView {
-                    Text(transcriptionManager.transcribedText)
+        GeometryReader { geometry in
+            ScrollView {
+                VStack(spacing: 40) {
+                    // Top microphone icon
+                    Image(systemName: isRecording ? "waveform" : "mic")
+                        .imageScale(.large)
+                        .font(.system(size: 40))
+                        .foregroundColor(isRecording ? .red : .blue)
+                        .padding(.top, geometry.size.height * 0.1)
+                    
+                    // Recording status text
+                    Text(isRecording ? "Recording..." : "")
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                    
+                    // Record button
+                    Button(action: {
+                        if isRecording {
+                            handleRecordingStop()
+                        } else {
+                            SharedAudioRecorder.shared.startRecording()
+                            isRecording = true
+                        }
+                    }) {
+                        HStack(spacing: 12) {
+                            Image(systemName: isRecording ? "stop.circle.fill" : "mic.circle.fill")
+                            Text(isRecording ? "Stop Recording" : "Start Recording")
+                        }
+                        .font(.headline)
                         .padding()
-                        .frame(minHeight: 100)
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(10)
+                        .frame(maxWidth: geometry.size.width * 0.8)
+                        .background(isRecording ? Color.red : Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(25)
+                        .shadow(radius: 5)
+                    }
+                    .disabled(transcriptionManager.isLoading)
+                    
+                    if transcriptionManager.isLoading {
+                        ProgressView("Warming Up Model...")
+                            .padding()
+                    }
+                    
+                    // Transcription section
+                    VStack(alignment: .leading, spacing: 15) {
+                        HStack {
+                            Text("Transcription")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                            Spacer()
+                            if !transcriptionManager.transcribedText.isEmpty {
+                                Button(action: {
+                                    UIPasteboard.general.string = transcriptionManager.transcribedText
+                                    showCopiedAlert = true
+                                }) {
+                                    Image(systemName: "doc.on.doc")
+                                        .font(.system(size: 20))
+                                        .foregroundColor(.blue)
+                                }
+                            }
+                        }
+                        
+                        ScrollView {
+                            Text(transcriptionManager.transcribedText.isEmpty ? "No transcription yet" : transcriptionManager.transcribedText)
+                                .padding()
+                                .frame(maxWidth: .infinity, minHeight: 100, alignment: .topLeading)
+                                .background(Color(.systemGray6))
+                                .cornerRadius(15)
+                        }
+                    }
+                    .padding(.horizontal)
+                    .frame(maxWidth: geometry.size.width * 0.9)
+                    
+                    if let errorMessage = transcriptionManager.errorMessage {
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    
+                    Spacer()
                 }
+                .frame(minHeight: geometry.size.height)
             }
-            
-            if let errorMessage = transcriptionManager.errorMessage {
-                Text(errorMessage)
-                    .foregroundColor(.red)
-            }
+            .frame(width: geometry.size.width)
         }
         .padding()
         .onAppear {
@@ -89,6 +127,9 @@ struct ContentView: View {
                 print("DEBUG: Received transcribed text via notification: \(transcribedText)")
                 // Optionally perform additional actions with the transcribedText
             }
+        }
+        .alert("Copied to clipboard", isPresented: $showCopiedAlert) {
+            Button("OK", role: .cancel) { }
         }
     }
     

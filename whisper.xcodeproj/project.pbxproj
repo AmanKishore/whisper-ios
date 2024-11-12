@@ -13,9 +13,9 @@
 		3745015F2CC4F3D700B08DCF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3745015E2CC4F3D700B08DCF /* Preview Assets.xcassets */; };
 		37C1BF292CC6025900DE22C8 /* WhisperKit in Frameworks */ = {isa = PBXBuildFile; productRef = 37C1BF282CC6025900DE22C8 /* WhisperKit */; };
 		37C1BF412CCF1ACB00DE22C8 /* TranscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1BF3F2CCF1ACB00DE22C8 /* TranscriptionManager.swift */; };
-		37C1C18F2CD71D2E00DE22C8 /* openai_whisper-tiny in Resources */ = {isa = PBXBuildFile; fileRef = 37C1C18E2CD71CC100DE22C8 /* openai_whisper-tiny */; };
 		37C1C1AA2CD834E400DE22C8 /* SharedAudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1C1A82CD834DA00DE22C8 /* SharedAudioRecorder.swift */; };
 		37C1C1AD2CD836D900DE22C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1C1AB2CD836D900DE22C8 /* SceneDelegate.swift */; };
+		37C1C1DB2CD9FAB600DE22C8 /* openai_whisper-tiny in Resources */ = {isa = PBXBuildFile; fileRef = 37C1C1DA2CD9FAB600DE22C8 /* openai_whisper-tiny */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +59,9 @@
 		374501812CC4F68D00B08DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		374501942CC5A1D600B08DCF /* whisper-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "whisper-ios.entitlements"; sourceTree = "<group>"; };
 		37C1BF3F2CCF1ACB00DE22C8 /* TranscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionManager.swift; sourceTree = "<group>"; };
-		37C1C18E2CD71CC100DE22C8 /* openai_whisper-tiny */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "openai_whisper-tiny"; sourceTree = "<group>"; };
 		37C1C1A82CD834DA00DE22C8 /* SharedAudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedAudioRecorder.swift; sourceTree = "<group>"; };
 		37C1C1AB2CD836D900DE22C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		37C1C1DA2CD9FAB600DE22C8 /* openai_whisper-tiny */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "openai_whisper-tiny"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +93,9 @@
 		3745014B2CC4F3D500B08DCF = {
 			isa = PBXGroup;
 			children = (
+				37C1C1DA2CD9FAB600DE22C8 /* openai_whisper-tiny */,
 				37C1C1A82CD834DA00DE22C8 /* SharedAudioRecorder.swift */,
 				37C1C1AB2CD836D900DE22C8 /* SceneDelegate.swift */,
-				37C1C18E2CD71CC100DE22C8 /* openai_whisper-tiny */,
 				374501942CC5A1D600B08DCF /* whisper-ios.entitlements */,
 				37C1BF3F2CCF1ACB00DE22C8 /* TranscriptionManager.swift */,
 				374501562CC4F3D500B08DCF /* whisper-ios */,
@@ -245,7 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37C1C18F2CD71D2E00DE22C8 /* openai_whisper-tiny in Resources */,
+				37C1C1DB2CD9FAB600DE22C8 /* openai_whisper-tiny in Resources */,
 				3745015F2CC4F3D700B08DCF /* Preview Assets.xcassets in Resources */,
 				3745015C2CC4F3D700B08DCF /* Assets.xcassets in Resources */,
 			);
@@ -436,13 +436,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "whisper-ios.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"whisper-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 8N47NFMLTW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "whisper-ios/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Whisper;
+				INFOPLIST_KEY_CFBundleDisplayName = Whisps;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone for speech recognition.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app needs access to Speech Recognition to test microphone functionality";
@@ -471,13 +471,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "whisper-ios.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"whisper-ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 8N47NFMLTW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "whisper-ios/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Whisper;
+				INFOPLIST_KEY_CFBundleDisplayName = Whisps;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need access to your microphone for speech recognition.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "This app needs access to Speech Recognition to test microphone functionality";
